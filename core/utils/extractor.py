@@ -19,17 +19,17 @@ __file_type__ = '.py'
 def get_attribute(file_path: str, attribute_name: str) -> Any:
     """
     Get a module's attribute, by file path and attribute name.
-     - Raise OSError if file does not exists
-     - Raise TypeError if file type is not .py
 
     :param file_path: the absolute path/location of the file.
     :param attribute_name: the attribute you want to extract from the file/module/class
     :return: Any
+    :raises: OSError if file does not exists
+    :raises: TypeError if file type is not __file_type__
     """
 
     file, extension = os.path.splitext(file_path)
 
-    if extension is not __file_type__:
+    if extension == __file_type__:
 
         try:
 
