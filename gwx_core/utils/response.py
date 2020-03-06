@@ -3,12 +3,10 @@ from typing import Tuple
 """
 Flask Restplus payload wrapper
 ==============================
-
 Introduces specific structure to serve as abstract to 
 every response payload that will be created,
 this is tightly coupled with Flask's implementation, 
 requiring that the return value MUST be a type Tuple.
-
 """
 
 
@@ -24,7 +22,7 @@ def create(message: str, data: dict, headers=None or dict) -> Tuple[dict, int, d
     return __create_response(message, data, 201, headers)
 
 
-def not_found(message: str, data=None or dict, headers=None or dict) -> Tuple[dict, int, dict or None]:
+def not_found(message: str, data=None or dict, headers=None) -> Tuple[dict, int, dict or None]:
     """A response object indicating that the requested resource is not found,
     ideal use for POST type requests.
 
@@ -36,7 +34,7 @@ def not_found(message: str, data=None or dict, headers=None or dict) -> Tuple[di
     return __create_response(message, data, 201, headers)
 
 
-def success(message: str, data: dict, headers=None or dict) -> Tuple[dict, int, dict or None]:
+def success(message: str, data: dict, headers=None) -> Tuple[dict, int, dict or None]:
     """A response object indicating that request is successful,
     ideal use for GET, PUT, PATCH type requests.
 
@@ -48,10 +46,9 @@ def success(message: str, data: dict, headers=None or dict) -> Tuple[dict, int, 
     return __create_response(message, data, 200, headers)
 
 
-def update_no_content(message: str, headers=None or dict) -> Tuple[dict, int, dict or None]:
+def update_no_content(message: str, headers=None) -> Tuple[dict, int, dict or None]:
     """A response object indicating that update request is successful
         but does not contain data, ideal use for PATCH type requests.
-
         :param message: string value
         :param headers: custom headers
         :return: conforms with Flask's restplus resource payload type: Tuple
