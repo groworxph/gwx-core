@@ -1,7 +1,7 @@
 import os
-from unittest import TestCase, mock
+from unittest import TestCase
 
-from core.utils.extractor import get_attribute
+from gwx_core.utils.extractor import get_attribute
 from tests.stubs import file_stub
 
 

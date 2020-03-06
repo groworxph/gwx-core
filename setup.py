@@ -5,7 +5,7 @@ with open("README.md", "r") as file:
 
 setuptools.setup(
     name="gwx-core",
-    version="0.0.1",
+    version="0.0.2",
     author="Jerric Calosor",
     author_email="jerric.calosor@groworx.com.au",
     long_description=long_description,
