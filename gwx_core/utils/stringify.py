@@ -1,4 +1,5 @@
 import os
+import re
 
 
 def file_name_conversion(file_path: str, extension_to_remove=None) -> str:
@@ -21,3 +22,19 @@ def file_name_conversion(file_path: str, extension_to_remove=None) -> str:
         return str.lower(str(name.split(extension_to_remove)[0]))
 
     return str.lower(str(name))
+
+
+def pascal_case(word: str) -> str:
+    """
+    Convert passed words to pascal case, ie:
+
+    - pascal_case("San Francisco")  # SanFrancisco
+    - pascal_case("SAN-FRANCISCO")  # SanFrancisco
+    - pascal_case("san_francisco")  # SanFrancisco
+
+    :param word: passed word as string
+    :return: the converted string
+    """
+    word_regex_pattern = re.compile("[^A-Za-z]+")
+    words = word_regex_pattern.split(word)
+    return "".join(w.title() if i is 0 else w.title() for i, w in enumerate(words))
