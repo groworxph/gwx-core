@@ -5,7 +5,7 @@ with open("README.md", "r") as file:
 
 setuptools.setup(
     name="gwx-core",
-    version="0.0.2",
+    version="0.0.3",
     author="Jerric Calosor",
     author_email="jerric.calosor@groworx.com.au",
     description="Core libraries and modules for flask projects.",
