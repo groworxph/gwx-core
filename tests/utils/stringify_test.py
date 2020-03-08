@@ -7,6 +7,7 @@ class StringifyTest(UtilsTestCase):
 
     def setUp(self) -> None:
         self.stub = f'{os.path.abspath(os.getcwd())}/../stubs/file_stub.py'
+        self.stub_name = 'file_stub'
 
     def test_file_name_conversion_successfully(self) -> None:
         """Assert that the file name from an absolute path has been extracted,
@@ -27,7 +28,7 @@ class StringifyTest(UtilsTestCase):
         file_name = stringify.file_name_conversion(self.stub, '_stub')
         self.assertEqual('file', file_name)
 
-    def test_file_name_conversion_raise_exception(self):
+    def test_file_name_conversion_raise_exception(self) -> None:
         """Assert that the FileNotFoundError exception is raised,
         when a non existing file is submitted as parameter.
 
@@ -39,3 +40,12 @@ class StringifyTest(UtilsTestCase):
             stringify.file_name_conversion(non_existing_file)
 
         self.assertEqual(f'Error file: {non_existing_file} does not exists.', str(context.exception))
+
+    def test_pascal_case_successful(self) -> None:
+        """Assert that the pascal case handles conversion of words separated by underscores `_` or spaces ` `.
+
+        :return: None
+        """
+        self.assertEqual('FileFile', stringify.pascal_case(f'{self.stub_name[:-4]} {self.stub_name[:-4]}'))
+        self.assertEqual('File', stringify.pascal_case(self.stub_name[:-4]))
+        self.assertEqual('FileStub', stringify.pascal_case(self.stub_name))
