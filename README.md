@@ -5,6 +5,9 @@
 <div align="center">
 Is a collection of reusable tools and libraries that can be used within your flask projects.
 </div>
+<br />
+
+---
 
 ### Dependencies
 - Python 3.7^
