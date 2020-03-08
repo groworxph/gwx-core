@@ -5,9 +5,10 @@ with open("README.md", "r") as file:
 
 setuptools.setup(
     name="gwx-core",
-    version="0.0.1",
+    version="0.0.2",
     author="Jerric Calosor",
     author_email="jerric.calosor@groworx.com.au",
+    description="Core libraries and modules for flask projects.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/groworxph/gwx-core",
