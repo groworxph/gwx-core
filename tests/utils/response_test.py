@@ -1,5 +1,5 @@
 from gwx_core.utils import response
-from tests.UtilsTestCase import UtilsTestCase
+from tests.utils_test_case import UtilsTestCase
 
 
 class ResponseTest(UtilsTestCase):
