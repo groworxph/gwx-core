@@ -11,7 +11,7 @@ setuptools.setup(
     description="Core libraries and modules for flask projects.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/groworxph/gwx-core",
+    url="https://bitbucket.org/groworxdigitalengineering/gwx-core/src/master/",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
